@@ -1,6 +1,42 @@
 # RAG-implementation-project
 Disclaimer: This project is a student work and not an official product of RMIT University. The content genrated by the AI chatbot is for educational and illustrative purposes only and may not be accurate or up-to-date. Please do not use this chatbot for official guidance on RMIT policies.
 
+RMIT Policy Assistant Chatbot 🏛️
+This project is an AI-powered chatbot designed to help students and staff at RMIT University easily find, understand, and comprehend official university policies. It uses a local Retrieval Augmented Generation (RAG) pipeline to provide accurate, context-aware answers based on a knowledge base created from crawled RMIT policy documents.
 
+Key Features
+🤖 Conversational AI: A user-friendly chat interface built with Streamlit.
 
-This is a school project of mine by implementing the RAG and session memory to a LLM model to customize
+📚 Dynamic Knowledge Base: The chatbot's knowledge is sourced from RMIT policy documents (in Markdown format), which can be updated by re-running the indexing script.
+
+🧠 Local RAG Pipeline: Overcomes common token limit issues and avoids the need for cloud-based embedding services by running the retrieval process locally.
+
+✅ Accurate, Sourced Answers: Uses AWS Bedrock (Claude 3 Haiku) to generate answers grounded in the specific, relevant sections of the policy documents it retrieves.
+
+How It Works
+The project is split into two main components:
+
+Offline Indexing (build_index.py): A script that you run once to build the knowledge base. It processes all the provided Markdown policy documents, uses a sentence-transformers model to create text embeddings (numerical representations) locally, and stores them in a highly efficient FAISS vector index.
+
+Online Application (app.py): The Streamlit web app that users interact with. When a user asks a question:
+
+The app generates an embedding for the question locally.
+
+It searches the local FAISS index to find the most relevant policy sections.
+
+It sends these relevant sections, along with the user's question, to the AWS Bedrock LLM.
+
+The LLM generates a response based only on the provided context, which is then displayed to the user.
+
+Tech Stack
+Frontend: Streamlit
+
+Backend & Core Logic: Python
+
+LLM: AWS Bedrock (Anthropic Claude 3 Haiku)
+
+Local Embeddings: sentence-transformers
+
+Vector Search: FAISS (Facebook AI Similarity Search)
+
+AWS Integration: boto3
