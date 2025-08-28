@@ -1,9 +1,11 @@
 # RAG-implementation-project
 Disclaimer: This project is a student work and not an official product of RMIT University. The content genrated by the AI chatbot is for educational and illustrative purposes only and may not be accurate or up-to-date. Please do not use this chatbot for official guidance on RMIT policies.
+----
+RMIT Policy Assistant Chatbot 🏛️
 
-RMIT Policy Assistant Chatbot 🏛️ \n
 This project is an AI-powered chatbot designed to help students and staff at RMIT University easily find, understand, and comprehend official university policies. It uses a local Retrieval Augmented Generation (RAG) pipeline to provide accurate, context-aware answers based on a knowledge base created from crawled RMIT policy documents.
 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
 Key Features
 🤖 Conversational AI: A user-friendly chat interface built with Streamlit.
 
@@ -28,15 +30,18 @@ It sends these relevant sections, along with the user's question, to the AWS Bed
 
 The LLM generates a response based only on the provided context, which is then displayed to the user.
 
+-------------------------------------------------------------------------------------------------------
+
 Tech Stack
-Frontend: Streamlit
 
-Backend & Core Logic: Python
+##Frontend: Streamlit
 
-LLM: AWS Bedrock (Anthropic Claude 3 Haiku)
+##Backend & Core Logic: Python
 
-Local Embeddings: sentence-transformers
+##LLM: AWS Bedrock (Anthropic Claude 3 Haiku)
 
-Vector Search: FAISS (Facebook AI Similarity Search)
+##Local Embeddings: sentence-transformers
 
-AWS Integration: boto3
+##Vector Search: FAISS (Facebook AI Similarity Search)
+
+##AWS Integration: boto3
